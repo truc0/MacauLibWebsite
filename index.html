@@ -3,71 +3,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- for structure -->
+    <link rel="stylesheet" href="./static/css/foundation.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./static/js/vendor/jquery.js"></script>
+    <script src="./static/js/vendor/foundation.js"></script>
+    <!-- for sidebar menu-->
+    <!-- <link rel="stylesheet" href="./static/css/normalize.css">
+    <link rel="stylesheet" href="./static/css/component.css">
+    <script src="./static/js/modernizr.custom.js"></script> -->
+    <!-- for slider -->
+    <link rel="stylesheet" href="./static/css/swiper.css">
     <title>Index | Macau Library Website</title>
+    <style> 
+    /* for swiper */
+        html, body {
+          position: relative;
+          height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .swiper-container {
+          width: 100%;
+          height: 100%;
+        }
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <button><img src="" alt="Menu"></button>
-        <div class="menu" style="display:none;">
-            <ul>
-                <li>Index</li>
-                <li>Book System</li>
-                <li>Activites</li>
-                <li>Links</li>
-                <li>About</li>
-            </ul>
+    <header class="row">
+        <button class="menu-btn columns small-2" data-effect="st-effect-1"><img src="./src/icon/menu.png" alt="Menu"></button>
+        <!-- <div id="st-container" class="st-container st-effect-1">
+            <nav id="menu-1" class="st-menu st-effect-1">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="#">Index</a></li>
+                    <li>Book System</li>
+                    <li>Activites</li>
+                    <li>Links</li>
+                    <li>About</li>
+                </ul>
+            </nav>
+        </div> -->
+        <a href="#" class="logo-box columns small-8">
+                <img class="lib-logo" src="./src/logo/lib.png" alt="the logo of Macau Public Library">
+        </a>
+        <a href="#" class="sign-in columns small-2" style="height: 100%; padding: 0.6em 0;">
+            sign in
+        </a> 
+    </header>
+
+    <section class="slide-img row columns">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./src/img/new-center-lib.png" alt="new center library policy"></div>
+                <div class="swiper-slide"><img src="./src/img/slider-img-2.jpg" alt="share and build together"></div>
+                <div class="swiper-slide"><img src="./src/img/slider-img-3.jpg" alt="publish books in other city"></div>
+                <div class="swiper-slide"><img src="./src/img/slider-img-4.jpg" alt="have a long time"></div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <img src="" alt="the logo of Macau Public Library">
-        <button class="sign-in">Sign in</button>
-    </nav>
-    <section class="slide-img">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
     </section>
-    <section class="search-box">
-        <div></div>
-        <div></div>
-        <button><img src="" alt="Search button"></button>
+
+    <section class="search-box row">
+        <select name="kind-of-search" id="search-kind" class="columns small-3" style="margin-bottom:0px;"></select>
+        <select name="" id="" class="columns small-3" style="margin-bottom:0px;"></select>
+        <input type="text" placeholder="" class="columns small-4" style="margin:0px;">
+        <div class="columns small-1">
+            <a href="#"><img src="./src/icon/search.png" alt="search"></a>
+        </div>
     </section>
+
     <section class="find-lib">
         <a href="">Find the nearby Library</a>
+        <div id="map"></div>
     </section>
+
     <section class="notice-board">
-        <h1>Notices</h1>
+        <h2>Notices</h2>
         <ul>
-            <li>Notice 1</li>
-            <li>Notice 2</li>
-            <li>Notice 3</li>
-            <li>Notice 4</li>
-            <li>Notice 5</li>
+            <li>Notice 1</li><hr> 
+            <li>Notice 2</li><hr>
+            <li>Notice 3</li><hr>
+            <li>Notice 4</li><hr>
+            <li>Notice 5</li><hr>
         </ul>
+        <div style="text-align:center;">
+            <a href="#">Get More</a>
+        </div>
     </section>
+
     <section class="book-recommand">
+        <a href="#"><h2>Recommand</h2></a>
         <ul>
-            <li>
-                <img src="" alt="">
-                <div class="book-intro">
-
+            <li class="row">
+                <img class="columns small-4" src="./src/img/book-1.jpg" alt="book-1">
+                <div class="book-intro columns small-8">
+                    this is book one, its name is call mini habits
                 </div>
             </li>
-            <li>
-                <img src="" alt="">
-                <div class="book-intro">
-
+            <li class="row">
+                <img class="columns small-4" src="./src/img/book-2.jpg" alt="book-2">
+                <div class="book-intro columns small-8">
+                    this is the second book, it is about the youth
                 </div>
             </li>
         </ul>
     </section>
-    <footer class="detail-ifo">
-        <img src="" alt="the logo of Macau Public Library">
-        <img src="" alt="the logo of ...">
-        <div class="lib-list">
-            
+
+    <nav class="detail-info">
+        <div class="lib-list dropdown">
+            <button class="dropbtn" onclick="dropfunc('lib-list-index')">Click to see the list of library</button>
+            <div id="lib-list-index" class="lib-area dropdown-content dropdown">
+                <h2>Macau South</h2>
+            </div>
         </div>
         <div class="links">
-            
+
         </div>
-    </section>
+    </nav>
+
+    <footer>
+        <a href="#"><img src="./src/logo/logo-1.png" alt="the logo of Macau Public Library"></a>
+        <a href="#"><img src="./src/logo/logo-2.png" alt="the logo of ..."></a>
+        This page is made by Bill, at 2018-09
+    </footer>
+
+    <!-- <script src="./static/js/classie.js"></script>
+    <script src="./static/js/sidebarEffects.js"></script> -->
+    <script src="./static/js/swiper.js"></script>
+    <script>
+        /**
+        var nowSelectedTarget = null;
+
+        function dropfunc(id) {
+            console.log(id)
+            nowSelectedTarget = document.getElementById(id)
+            console.log(nowSelectedTarget)
+            nowSelectedTarget.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            el = event.target;
+            if (el !== nowSelectedTarget) {
+                var dropdowns = document.getElementsByClassName('dropdown-content')
+                for (let i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show')
+                    }
+                }
+                if (el.matches('.dropbtn')) {
+                    dropfunc(el.id)
+                }
+            }
+        }
+        */
+    </script>
+    <!-- <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 113.5, lng: 22.5},
+                zoom: 6
+            });
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    map.setCenter(pos)
+                })
+            } else {
+                alert('Your Browser cannot support this')
+            }
+        }
+    </script> -->
+    <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=23.5,22.5&radius=1500&type=library&keyword=cruise&key=AIzaSyB-U79i5IIO2nd7rtOqmW9irgX8uuAkYr8">
+    </script> -->
+    <script>
+        /* this is for slider */
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 0,
+            centeredSlides: true,
+            loop: true,
+            // autoplay: {
+            //     delay: 2500,
+            //   disableOnInteraction: false,
+            // },
+            pagination: {
+              el: '.swiper-pagination',
+              dynamicBullets: true
+            }
+        });
+    </script>
 </body>
 </html>
