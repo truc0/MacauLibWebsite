@@ -77,6 +77,23 @@
         </a> 
     </header>
 
+    <section class="random-lib"></section>
+
+    <section class="search-box row">
+        <select name="kind-of-search" id="search-kind" class="columns small-3" style="margin-bottom:0px;"></select>
+        <select name="" id="" class="columns small-3" style="margin-bottom:0px;"></select>
+        <input type="text" placeholder="" class="columns small-4" style="margin:0px;">
+        <div class="columns small-1">
+            <a href="#"><img src="./src/icon/search.png" alt="search"></a>
+        </div>
+    </section>
+
+
+    <section class="find-lib">
+        <a href="">Find the nearby Library</a>
+        <div id="map"></div>
+    </section>
+
     <section class="slide-img row columns">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -89,58 +106,22 @@
         </div>
     </section>
 
-    <section class="search-box row">
-        <select name="kind-of-search" id="search-kind" class="columns small-3" style="margin-bottom:0px;"></select>
-        <select name="" id="" class="columns small-3" style="margin-bottom:0px;"></select>
-        <input type="text" placeholder="" class="columns small-4" style="margin:0px;">
-        <div class="columns small-1">
-            <a href="#"><img src="./src/icon/search.png" alt="search"></a>
-        </div>
-    </section>
-
-    <section class="find-lib">
-        <a href="">Find the nearby Library</a>
-        <div id="map"></div>
-    </section>
-
-    <section class="notice-board">
-        <h2>Notices</h2>
-        <ul>
-            <li>Notice 1</li><hr> 
-            <li>Notice 2</li><hr>
-            <li>Notice 3</li><hr>
-            <li>Notice 4</li><hr>
-            <li>Notice 5</li><hr>
-        </ul>
-        <div style="text-align:center;">
-            <a href="#">Get More</a>
-        </div>
-    </section>
+    <section class="notice-board"></section>
 
     <section class="book-recommand">
         <a href="#"><h2>Recommand</h2></a>
-        <ul>
-            <li class="row">
-                <img class="columns small-4" src="./src/img/book-1.jpg" alt="book-1">
-                <div class="book-intro columns small-8">
-                    this is book one, its name is call mini habits
-                </div>
-            </li>
-            <li class="row">
-                <img class="columns small-4" src="./src/img/book-2.jpg" alt="book-2">
-                <div class="book-intro columns small-8">
-                    this is the second book, it is about the youth
-                </div>
-            </li>
-        </ul>
+        <div class="row">
+            <div class="columns small-6">
+                <img src="" alt="">
+            </div>
+            <div class="columns small-6">
+                <p></p>
+            </div>
+        </div>
     </section>
 
     <nav class="detail-info">
-        <div class="lib-list dropdown">
-            <button class="dropbtn" onclick="dropfunc('lib-list-index')">Click to see the list of library</button>
-            <div id="lib-list-index" class="lib-area dropdown-content dropdown">
-                <h2>Macau South</h2>
-            </div>
+        <div class="lib-list">
         </div>
         <div class="links">
 
@@ -156,34 +137,6 @@
     <!-- <script src="./static/js/classie.js"></script>
     <script src="./static/js/sidebarEffects.js"></script> -->
     <script src="./static/js/swiper.js"></script>
-    <script>
-        /**
-        var nowSelectedTarget = null;
-
-        function dropfunc(id) {
-            console.log(id)
-            nowSelectedTarget = document.getElementById(id)
-            console.log(nowSelectedTarget)
-            nowSelectedTarget.classList.toggle('show');
-        }
-
-        window.onclick = function(event) {
-            el = event.target;
-            if (el !== nowSelectedTarget) {
-                var dropdowns = document.getElementsByClassName('dropdown-content')
-                for (let i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show')
-                    }
-                }
-                if (el.matches('.dropbtn')) {
-                    dropfunc(el.id)
-                }
-            }
-        }
-        */
-    </script>
     <!-- <script>
         var map;
         function initMap() {
