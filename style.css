@@ -3,12 +3,13 @@ header {
     height: 3em;
     padding: 0.3em;
     margin-bottom: 1em;
+    background-color: white;
 }
-header.logo-box {
+header *.logo-box {
     height: 100%;
 }
+
 .sign-in {
-    font-size: 1em;
     text-align: center;
 }
 .menu-btn {
@@ -20,7 +21,7 @@ header.logo-box {
     width: 100%;
 }
 .search-box {
-    margin: 1em 0.2em 0em 0.2em;
+    margin: auto;
     border-radius: 0.5em;
     padding: 0.3em;
     background-color: lightskyblue;
@@ -115,4 +116,10 @@ footer img {
 }
 .show {
     display: inline;
+}
+
+@media screen and (min-width: 600px) {
+    header {
+        height: 10em;
+    }
 }
