@@ -3,22 +3,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- for structure -->
-    <link rel="stylesheet" href="./static/css/foundation.css">
+    <link rel="stylesheet" href="./static/foundation.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="./static/js/vendor/jquery.js"></script>
-    <script src="./static/js/vendor/foundation.js"></script>
     <!-- for slider -->
-    <link rel="stylesheet" href="./static/css/swiper.css">
+    <link rel="stylesheet" href="./static/dist/css/swiper.min.css">
+    <!-- for font -->
+    <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet"> 
     <title>首頁 | 澳門公共圖書館</title>
     <style> 
+        .dropdown-show {
+            display: block;
+        }
     /* for swiper */
         html, body {
           position: relative;
           height: 100%;
         }
         body {
-            background: white; /* #eee */
+            background: whitesmoke; /* #eee */
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
             color:#000;
@@ -59,7 +63,7 @@
         <button class="menu-btn columns small-2" data-effect="st-effect-1"><img src="./src/icon/menu.png" alt="菜單"></button>
         </div>
         <div class="logo-box columns small-8">
-            <a href="#">Macau Public Library</a>
+            <a href="#"><h1>Macau Public Library</h1></a>
         </div>
         <div class="sign-in columns small-2">
             <a href="#">
@@ -94,21 +98,21 @@
             </div>
         </section>
 
-        <section class="search-box row">
+        <!-- <section class="search-box row">
             <select name="kind-of-search" id="search-kind" class="columns small-3" style="margin-bottom:0px;"></select>
             <select name="" id="" class="columns small-3" style="margin-bottom:0px;"></select>
             <input type="text" placeholder="" class="columns small-4" style="margin:0px;">
             <div class="columns small-1">
                 <a href="#"><img src="./src/icon/search.png" alt="搜尋"></a>
             </div>
-        </section>
+        </section> -->
 
         <div class="find-lib">
             <a href="javascript:findLibNearBy()">Find the nearby Library</a>
             <div id="map"></div>
         </div>
 
-        <section class="book-recommand">
+        <section class="book-recommand row columns">
                 <a href="#"><h2>Recommand</h2></a>
                 <div class="row">
                     <div class="columns small-6">
@@ -135,64 +139,124 @@
     </main>
 
     <nav class="detail-info">
-        <div class="lib-list">
-            <h2>圖書館</h2>
-            <div class="lib-area">
-                <h3>澳門中區</h3>
-                <a href="#" class="lib-item">澳門中央圖書館</a>
-                <a href="#" class="lib-item">何賢公園圖書館</a>
+        <h2>導航欄</h2>
+        <div class="lib-list dropdown-menu">
+            <h3>圖書館</h3>
+            <div class="lib-area dropdown-menu dropdown-hidden">
+                <button class="lib-area-item"><h4>澳門中區</h4></button>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">澳門中央圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">何賢公園圖書館</div>
             </div>
-            <div class="lib-area">
-                <h3>澳門南區</h3>
-                <a href="#" class="lib-item">何東圖書館</a>
-                <a href="#" class="lib-item">下環圖書館</a>
+            <div class="lib-area dropdown-menu dropdown-hidden">
+                <button class="lib-area-item"><h4>澳門南區</h4></button>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">何東圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">下環圖書館</div>
             </div>
-            <div class="lib-area">
-                <h3>澳門西區</h3>
-                <a href="#" class="lib-item">沙梨頭圖書館</a>
-                <a href="#" class="lib-item">紅街市圖書館</a>
-                <a href="#" class="lib-item">白鴿巢公園黃營均圖書館</a>
+            <div class="lib-area dropdown-menu dropdown-hidden">
+                <button class="lib-area-item"><h4>澳門西區</h4></button>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">沙梨頭圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">紅街市圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">白鴿巢公園黃營均圖書館</div>
             </div>
-            <div class="lib-area">
-                <h3>澳門北區</h3>
-                <a href="#" class="lib-item">青州圖書館</a>
-                <a href="#" class="lib-item">望廈圖書館</a>
-                <a href="#" class="lib-item">紀念孫中山公園黃營均圖書館</a>
-                <a href="#" class="lib-item">黑沙環黃營均圖書館</a>
-                <a href="#" class="lib-item">黑沙環黃營均兒童圖書館</a>
+            <div class="lib-area dropdown-menu dropdown-hidden">
+                <button class="lib-area-item"><h4>澳門北區</h4></button>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">青州圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">望廈圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">紀念孫中山公園黃營均圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">黑沙環黃營均圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">黑沙環黃營均兒童圖書館</div>
             </div>
-            <div class="lib-area">
-                <h3>離島區</h3>
-                <a href="#" class="lib-item">氹仔圖書館</a>
-                <a href="#" class="lib-item">氹仔黃營均圖書館</a>
-                <a href="#" class="lib-item">路環圖書館</a>
+            <div class="lib-area dropdown-menu dropdown-hidden">
+                <button class="lib-area-item"><h4>離島區</h4></button>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">氹仔圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">氹仔黃營均圖書館</div>
+                <div href="#" class="lib-item dropdown-content dropdown-hidden">路環圖書館</div>
             </div>
-            <div class="lib-area">
-                <a><h3>流動圖書車</h3></a>
+            <div class="lib-area dropdown-content dropdown-hidden">
+                <a><h4>流動圖書車</h4></a>
             </div>
-            <div class="lib-area">
-                <a><h3>專門圖書館</h3></a>
+            <div class="lib-area dropdown-content dropdown-hidden">
+                <a><h4>專門圖書館</h4></a>
             </div>
         </div>
         <div class="links">
-            <h2>捷徑/鏈接</h2>
-            <a href="#" class="links-item">館藏目錄</a>
-            <a href="#" class="links-item">發表意見</a>
-            <a href="#" class="links-item">新澳門中央圖書館計劃</a>
-            <a href="#" class="links-item">ISBN中心</a>
-            <a href="#" class="links-item">澳門公共圖書館 Facebook</a>
+            <button class="links-title"><h3>捷徑/鏈接</h3></button> 
+            <div href="https://webpac.library.gov.mo/client/zh_TW/webpac" class="links-item dropdown-content dropdown-hidden">館藏目錄</div>
+            <div href="https//www.library.gov.mo/zh-hant/service-guide/opinion" class="links-item dropdown-content dropdown-hidden">發表意見</div>
+            <div href="https//www.library.gov.mo/zh-hant/new-library" class="links-item dropdown-content dropdown-hidden">新澳門中央圖書館計劃</div>
+            <div href="http://isbn.library.gov.mo/zh/" class="links-item dropdown-content dropdown-hidden">ISBN中心</div>
+            <div href="https://www.facebook.com/BibliotecaCentraldeMacau/" class="links-item dropdown-content dropdown-hidden">澳門公共圖書館 Facebook</div>
         </div>
     </nav>
 
-    <footer>
-        <a href="#"><img src="./src/logo/logo-1.png" alt="the logo of Macau Public Library"></a>
-        <a href="#"><img src="./src/logo/logo-2.png" alt="the logo of ..."></a>
+    <footer class="row">
+        <div class="columns small-12 medium-6">
+                <a href="https://www.library.gov.mo/zh-hant"><img src="./src/logo/logo-1.png" alt="the logo of Macau Public Library"></a>
+        </div>
+        <div class="columns small-12 medium-6">
+                <a href="http://www.icm.gov.mo/welcome"><img src="./src/logo/logo-2.png" alt="the logo of ..."></a>
+        </div>
         <p>This page is made by bill, 2018-09</p>
     </footer>
 
-    <!-- <script src="./static/js/classie.js"></script>
-    <script src="./static/js/sidebarEffects.js"></script> -->
-    <script src="./static/js/swiper.js"></script>
+    <script>
+        /* this is for the dropdown menu */
+        var nowSelectedDropdown = null;
+        function closeAllDropdown(ele) {
+            console.log(ele);
+            var dropdownList = document.querySelectorAll('.dropdown-menu');
+            dropdownList.forEach(function (value) {
+                let eleList = value.children;
+                console.log(1)
+                console.log(value)
+                if (!(ele === value)) {
+                    for (let index in eleList) {
+                        let eleInList = eleList[index];
+                        if (isNaN(index)) {continue}
+                        if (! eleInList.classList.contains('dropdown-hidden')) {
+                            eleInList.classList.add('dropdown-hidden')
+                        } else {
+                            console.log('this element has already had dropsown-hidden class')
+                        }
+                    }   
+                }
+            })
+        }
+
+        function openDropdown(ele) {
+            dropdownContent = ele.children;
+            console.log(dropdownContent)
+            for (let index in dropdownContent) {
+                if (isNaN(index)) {continue;}
+                /**
+                if (!dropdownContent[index].classList.contains('dropdown-hidden')) {
+                    if (!dropdownContent[index].classList.contains('lib-area-item')) {
+                        // console.log('Error: this element has already had the class dropdown-show')
+                    }
+                } else {
+                    dropdownContent[index].classList.remove('dropdown-hidden');
+                }
+                */
+               if (dropdownContent[index].classList.contains('dropdown-menu') || dropdownContent[index].classList.contains('dropdown-content'))
+               dropdownContent[index].classList.toggle('dropdown-hidden')
+            }
+        }
+
+        window.onclick = function (event) {
+            var ele = event.target;
+            ele = ele.parentNode;
+            // console.log(ele)
+            if (nowSelectedDropdown !== ele) {
+                nowSelectedDropdown = ele;
+                // closeAllDropdown(ele);
+                openDropdown(ele)
+            } else {
+                // closeAllDropdown(ele.parentNode);
+                nowSelectedDropdown = ele.parentNode.classList.contains('dropdown-menu') ? ele.parentNode : null;
+            }
+        }
+    </script>
+    <script src="./static/dist/js/swiper.min.js"></script>
     <!-- <script>
         var map;
         function initMap() {
